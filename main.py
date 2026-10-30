@@ -4,6 +4,7 @@ import os
 import re
 import math
 import sys
+from collections import Counter
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -28,12 +29,13 @@ def calculate_entropy(data):
     """
     if not data:
         return 0
-    entropy = 0
-    for x in range(256):
-        p_x = float(data.count(chr(x)))/len(data)
-        if p_x > 0:
-            entropy += - p_x * math.log2(p_x)
-    return entropy
+    # One Counter pass. The old loop rescanned the string 256 times,
+    # once per possible byte value, and characters outside chr(0) to
+    # chr(255) were never counted at all, so their share of the line
+    # quietly vanished from the probabilities.
+    counts = Counter(data)
+    length = len(data)
+    return -sum((count / length) * math.log2(count / length) for count in counts.values())
 
 
 def scan_file(filename, entropy_threshold=4.5):
@@ -107,8 +109,13 @@ def main():
     args = parser.parse_args()
 
     if args.log_file:
-        # Configure logging to file if specified
-        file_handler = logging.FileHandler(args.log_file)
+        # Configure logging to file if specified. An unwritable log
+        # path used to raise out of main as a raw traceback.
+        try:
+            file_handler = logging.FileHandler(args.log_file)
+        except OSError as e:
+            print(f"Error: Cannot open log file {args.log_file}: {e}")
+            sys.exit(1)
         file_handler.setLevel(logging.INFO)
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
         file_handler.setFormatter(formatter)
@@ -118,7 +125,14 @@ def main():
         if args.file:
             return_code = scan_file(args.file, args.entropy_threshold)
         elif args.directory:
-            return_code = scan_directory(args.directory, args.entropy_threshold)
+            # os.walk over a missing directory yields nothing, so a
+            # typo here used to look exactly like a clean scan, rc 0.
+            if os.path.isdir(args.directory):
+                return_code = scan_directory(args.directory, args.entropy_threshold)
+            else:
+                logging.error(f"Directory not found: {args.directory}")
+                print(f"Error: Directory not found: {args.directory}")
+                return_code = 1
         else:
             logging.error("No file or directory specified.")
             print("Error: No file or directory specified.")
@@ -132,21 +146,5 @@ def main():
         print("\nScan interrupted by user.")
         sys.exit(1)
 
-# Example usage
 if __name__ == "__main__":
-    # Example 1: Scan a single file
-    # python suspicious_string_detector.py -f example.py
-
-    # Example 2: Scan a directory
-    # python suspicious_string_detector.py -d ./my_project
-
-    # Example 3: Scan a file with a custom entropy threshold
-    # python suspicious_string_detector.py -f example.py -e 5.0
-
-    # Example 4: Scan a directory and log the results to a file
-    # python suspicious_string_detector.py -d ./my_project -l scan.log
-
-    # Example 5: If the file or directory is specified as a relative path, it must be relative to the location the script is executed from.
-    # For example, to execute the script from /home/user and analyze a file located in /home/user/projects/my_project/example.py, you would run:
-    # python suspicious_string_detector.py -f projects/my_project/example.py
     main()
