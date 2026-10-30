@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # codeintel-Suspicious-String-Detector
 Scans code for potentially malicious or suspicious strings, such as those used in command injection or path traversal attacks. Flags strings based on regular expressions and entropy analysis. - Focused on Tools for static code analysis, vulnerability scanning, and code quality assurance
 
