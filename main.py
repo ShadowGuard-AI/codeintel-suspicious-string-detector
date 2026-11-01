@@ -48,11 +48,17 @@ def scan_file(filename, entropy_threshold=4.5):
                 line = line.strip()  # Remove leading/trailing whitespace
                 # Check for suspicious patterns
                 for pattern in SUSPICIOUS_PATTERNS:
+                    # I search the line as text, so a pattern inside a comment or
+                    # a quoted example matches exactly like live code. This tool
+                    # flags reading material, not only code that will run.
                     if pattern.search(line):
                         logging.warning(f"[{filename}:{line_number}] Suspicious pattern detected: {line}")
                         print(f"[{filename}:{line_number}] Suspicious pattern detected: {line}")
 
                 # Check for high-entropy strings (longer than 10 characters)
+                # I measure the entropy of the whole stripped line, not of any
+                # single token in it. A long ordinary line with varied text can
+                # cross the threshold even when no one string in it is random.
                 if len(line) > 10:
                     entropy = calculate_entropy(line)
                     if entropy > entropy_threshold:
@@ -83,6 +89,9 @@ def scan_directory(directory, entropy_threshold=4.5):
     for root, _, files in os.walk(directory):
         for file in files:
             filepath = os.path.join(root, file)
+            # The return code tracks read errors only. A directory full of
+            # suspicious strings returns 0 as long as every file could be
+            # read, so findings and errors are told apart by the output.
             return_code |= scan_file(filepath, entropy_threshold) #bitwise OR to check if any file has errors
     return return_code
 
