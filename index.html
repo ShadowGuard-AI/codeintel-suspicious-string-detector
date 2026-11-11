@@ -3,81 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>codeintel-suspicious-string-detector: Bioluminescent Bay Night Row</title>
-<style>@font-face{font-family:'Betania Patmos In';src:url('fonts/BetaniaPatmosIn.ttf') format('truetype');}@font-face{font-family:'Archivo';src:url('fonts/Archivo.ttf') format('truetype');}
-:root{--ground:#080a0a;--panel:#23282a;--head:#eef0eb;--ink:#f2f2ee;--accent:#e2c43c}
-*{box-sizing:border-box}body{margin:0;background:var(--ground);color:var(--ink);font-family:'Archivo',sans-serif;line-height:1.65}
-h1,h2,h3{font-family:'Betania Patmos In',serif;color:var(--head)}
+<title>codeintel-suspicious-string-detector: The Sniffer Dog Line</title>
+<style>@font-face{font-family:'Londrina Solid';src:url('fonts/LondrinaSolid.ttf') format('truetype');font-weight:400;font-style:normal;}@font-face{font-family:'Atkinson Hyperlegible';src:url('fonts/AtkinsonHyperlegible.ttf') format('truetype');font-weight:400;font-style:normal;}@font-face{font-family:'Atkinson Hyperlegible';src:url('fonts/AtkinsonHyperlegible-Bold.ttf') format('truetype');font-weight:700;font-style:normal;}
+:root{--ground:#20242a;--panel:#2e343c;--head:#f5f2ea;--ink:#eceae2;--accent:#f2c230}
+*{box-sizing:border-box}body{margin:0;background:var(--ground);color:var(--ink);font-family:'Atkinson Hyperlegible',sans-serif;line-height:1.65}
+h1,h2,h3{font-family:'Londrina Solid',serif;color:var(--head)}
 .hero img.heroimg{width:100%;height:52vh;object-fit:cover;display:block}
 .hero .in,main,footer{max-width:1120px;margin:0 auto;padding:1rem 6vw 2rem}.logo{width:210px}
 nav{display:flex;gap:1rem;flex-wrap:wrap;margin:1.2rem 0}
-.btn{display:inline-block;text-decoration:none;font-family:'Betania Patmos In',serif;color:var(--head);background:#14181a;border:2px solid #cfc9a8;border-radius:46% 54% 52% 48%/60% 62% 38% 40%;padding:.75rem 1.2rem}
-.btn:hover{background:#2a2110}.btn:active{transform:translateY(2px)}.btn:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 2px var(--ground),0 0 0 4px var(--accent)}
-a{color:var(--head)}.panel{background:var(--panel);color:var(--ink);padding:.4rem 1.5rem 1.3rem;margin:1.8rem 0}
-pre{background:#101314;color:#f4f2ea;padding:1rem;overflow-x:auto;white-space:pre-wrap}
-.flag{border-left:5px solid var(--accent);background:#2c2a1a;padding:.6rem 1rem}
-.callout{background:#d8d5cc;color:#080a0a;padding:.6rem 1rem;margin:1rem 0}
-.sponge::before{content:"◯ ";color:#d8d5cc} a:hover .sponge,a:hover{color:var(--accent)}
-img.rule{width:100%;height:40px;object-fit:cover}</style>
+.btn{display:inline-block;text-decoration:none;font-family:'Londrina Solid',serif;color:var(--head);background:var(--panel);border:2px solid var(--accent);border-radius:10px;padding:.6rem 1.1rem}
+.btn:hover{border-color:var(--head)}.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+a{color:var(--head)}.panel{background:var(--panel);color:var(--ink);padding:.4rem 1.5rem 1.3rem;margin:1.8rem 0;border-radius:6px}
+pre{background:#171b20;color:var(--ink);padding:1rem;overflow-x:auto;white-space:pre-wrap}
+.flag{border-left:5px solid var(--accent);background:rgba(0,0,0,.18);padding:.6rem 1rem}
+img.rule{width:100%;height:120px;object-fit:cover;display:block}img.diag{max-width:100%}
+code{font-family:inherit;background:rgba(0,0,0,.25);padding:0 .3rem;border-radius:3px}</style>
 </head>
 <body>
-
-<header class="hero"><img class="heroimg" src="intro-banner.png" alt="Sand, shells and fixed glass sponges in front, a fish trail bending once, the boat crossing with its widening oar trail, far shore and low moon behind, the mooring post at the right rim, no lettering anywhere">
-<div class="in"><img class="logo" src="logo.png" alt="One widening oar trail on black water, ash white at the core, sulfur yellow at the edges, one red fleck at the origin, the name lettered below as depth markers on a sounding line">
+<header class="hero"><img class="heroimg" src="intro-banner.png" alt="Spaniel with its nose close to the seam of a plain suitcase on a conveyor belt, one paw raised on the belt edge, the handler hand and lead soft behind">
+<div class="in"><img class="logo" src="logo.png" alt="A springer spaniel sitting alert beside a single plain navy suitcase, other plain cases soft behind">
 <h1>codeintel-suspicious-string-detector</h1>
-<p>A night crossing taken pull by pull, jetty first and open water last. Yellow on this page marks a finding or a struck trail only, never ornament.</p>
-<nav>
-<a class="btn" href="#usage">Scan One File</a><a class="btn" href="#usage">Scan a Directory Recursively</a><a class="btn" href="#params">Set the Entropy Threshold</a><a class="btn" href="#params">Write Logs to a File</a><a class="btn" href="#params">Show Help</a>
-</nav></div></header>
+<p>A trained nose working a line of plain cases one by one, and sitting down at the one that smells wrong.</p>
+<nav><a class="btn" href="#usage">Scan one file</a><a class="btn" href="#usage">Scan a directory</a><a class="btn" href="#params">Parameters</a><a class="btn" href="#exits">Exit codes</a></nav></div></header>
 <main>
-<section class="panel"><h2>What the Detector Does</h2>
-<p>It scans code for potentially malicious or suspicious strings, such as those used in command injection or path traversal attacks, and flags strings based on regular expressions and entropy analysis.</p>
-<p>In main.py the work is narrower than that account suggests. The scanner reads each file line by line as plain text. Every stripped line is searched against eight named patterns. If the stripped line is longer than ten characters, the whole line is then measured for Shannon entropy. No single token within the line is measured on its own.</p>
-<div class="callout"><h3>Entropy Is Measured on the Whole Line</h3><p>The entropy figure belongs to the whole stripped line, not to any one string inside it. A long ordinary line with varied text can cross the threshold even when nothing inside it is random on its own.</p></div>
-<div class="callout"><h3>A Pattern in a Comment Is Flagged as Text</h3><p>The search knows the line as text and nothing more. A pattern sitting inside a comment or inside a quoted example is flagged exactly as a pattern in live code would be flagged.</p></div>
-</section>
-<section class="panel"><h2>Eight Patterns Along the Wake</h2>
-<p>In the order the code holds them:</p>
-<ol>
-<li>A semicolon followed by an rm or del removal command</li>
-<li>A call to eval</li>
-<li>A call to exec</li>
-<li>A call to subprocess.call</li>
-<li>A call to os.system</li>
-<li>A dot dot slash traversal step</li>
-<li>A reference to the passwd file path</li>
-<li>A UNION SELECT pairing</li>
-</ol>
-<p>No pattern text is given beyond those names, and no string value from any scanned file is reproduced on this page.</p>
-</section>
-<section class="panel"><h2>Install</h2>
+<section class="panel"><h2>What the detector does</h2>
+<p>The tool reads files line by line as plain text and flags lines two ways, run as <code>python3 main.py (-f FILE | -d DIRECTORY) [-e ENTROPY_THRESHOLD] [-l LOG_FILE]</code>, with exactly one of the file and directory options required. The first way is a fixed list of eight regular expressions. The second way measures the Shannon entropy of the whole stripped line. A directory scan walks recursively and reads every file whatever its ending.</p></section><section class="panel"><h2>Eight patterns on the line</h2>
+<p>In the order the code holds them: a semicolon before an rm or del command with -rf; eval(; exec(; subprocess.call(; os.system(; ../; /etc/passwd; and UNION SELECT.</p></section><section class="panel"><h2>Entropy is measured on the whole line</h2>
+<p class="flag">The entropy figure belongs to the whole stripped line, never to any one string inside it. A line is measured only when the stripped line is longer than ten characters, and it is flagged only when its entropy is strictly greater than the threshold, whose default is 4.5. A long ordinary line with varied text can cross the threshold with no random string anywhere in it.</p></section><section class="panel"><h2>A pattern in a comment is flagged as text</h2>
+<p class="flag">The search knows each line as text and nothing more, so a pattern inside a comment or a quoted example is flagged exactly as a pattern in live code would be.</p></section><section class="panel"><h2>Install</h2>
 <pre>git clone https://github.com/ShadowGuard-AI/codeintel-suspicious-string-detector</pre>
-<p>Repository fact, not a README step: main.py uses only the standard library, importing argparse, logging, os, re, math, sys, and the Counter from collections, so no dependency step follows the clone in either the README or the code.</p>
-</section>
-<section class="panel" id="usage"><h2>One File or One Directory</h2>
+<p>main.py uses only the standard library, so no dependency step follows the clone.</p></section><section class="panel"><h2>Usage</h2>
 <pre>python3 main.py (-f FILE | -d DIRECTORY) [-e ENTROPY_THRESHOLD] [-l LOG_FILE]</pre>
-<p class="flag">Exactly one of the file choice and the directory choice is required. The two are held in a mutually exclusive group in the parser, so a run with neither and a run with both are each refused by the parser before any scanning begins.</p>
-<p>A directory run walks the tree recursively through every file it finds, whatever its ending. A file run reads the one file named.</p>
-<p><a href="#params"><span class="sponge"></span>Marks along the sounding line</a></p>
-</section>
-<section class="panel" id="params"><h2>Marks Along the Sounding Line</h2>
+<p>Exactly one of -f and -d is required. The log path is tried before scanning starts.</p></section><section class="panel" id="params"><h2>Parameters</h2>
 <ul>
-<li><code>-h</code>: shows a help message and exits.</li>
+<li><code>-h</code>: show help message and exit.</li>
 <li><code>-f</code>, <code>--file</code>: path to the file to scan.</li>
 <li><code>-d</code>, <code>--directory</code>: path to the directory to scan recursively.</li>
-<li><code>-e</code>, <code>--entropy_threshold</code>: entropy threshold for detecting high entropy strings, with a default of 4.5. Code fact: the entropy of the whole stripped line must be strictly greater than the threshold; a line at the threshold itself is not flagged.</li>
-<li><code>-l</code>, <code>--log_file</code>: path to the log file; if not provided, logs are printed to the console. Code fact: a log path which cannot be opened ends the run with an error and exit 1 before scanning starts.</li>
-</ul>
-</section>
-<section class="panel"><h2>A Finding Is Not an Error</h2>
-<p>A file containing a high entropy string, entropy 4.57 in the test, and an os.system call is flagged for both and the run exits 0. Findings are reported in the output; the exit code tracks read errors alone. A missing file, an unreadable file, or a directory that is not a directory each returns or exits 1, and a directory full of flagged lines returns 0 so long as every file in it could be read.</p>
-<p>Read suspicion from the flagged lines and completion from the exit code, and never swap one reading for the other.</p>
-</section>
+<li><code>-e</code>, <code>--entropy_threshold</code>: entropy threshold (default 4.5), applied strictly, so a line at the threshold itself is not flagged.</li>
+<li><code>-l</code>, <code>--log_file</code>: path to the log file; if not provided, logs print to the console.</li>
+</ul></section><section class="panel" id="exits"><h2>Exit codes</h2>
+<p>Findings never move the exit code. A run with findings printed still exits 0. Exit 1 is for read errors, a missing file, a directory that is not a directory, or a log path that cannot be opened, which is tried before scanning starts.</p></section>
+<section class="panel"><h2>Diagrams</h2><p><img class="diag" src="assets/architecture.png" alt="Architecture diagram"></p><p><img class="diag" src="assets/flowchart.png" alt="Flowchart diagram"></p><p><img class="diag" src="assets/product-map.png" alt="Product map diagram"></p></section>
 <section class="panel"><h2>Licence</h2>
-<p>The README ends with the line See LICENSE. The repository LICENSE file carries the MIT License. Both facts stand as they are.</p>
-</section>
+<p>The repository LICENSE file carries the MIT License.</p></section>
 </main>
-<footer><p>Bioluminescent Bay Night Row. Headings in Betania Patmos In, text in Archivo, both under the SIL Open Font License 1.1.</p></footer>
-
+<footer><p>The Sniffer Dog Line. Headings in Londrina Solid, text in Atkinson Hyperlegible, both under the SIL Open Font License 1.1.</p></footer>
 </body>
 </html>
