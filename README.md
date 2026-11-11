@@ -6,6 +6,8 @@ Title block: the name above is set in Betania Patmos In in ash white on a vent b
 
 ![A springer spaniel sitting alert beside a single plain navy suitcase, other plain cases soft behind](logo.png)
 
+![A springer spaniel sitting alert beside one plain grey suitcase at the end of a baggage belt, its handler standing by with the lead, plain cases receding along the belt behind](banner.png)
+
 ![The bay in three depths: far shore and moon road still, the boat crossing with its trail widening, holding, and thinning fleck by fleck, a fish trail striking, bending once, and fading swiftly, bubbles rising in a slow column at the lower rim](scene.svg)
 
 Scans code for potentially malicious or suspicious strings, such as those used in command injection or path traversal attacks. Flags strings based on regular expressions and entropy analysis. Focused on tools for static code analysis, vulnerability scanning, and code quality assurance.

@@ -26,6 +26,7 @@ code{font-family:inherit;background:rgba(0,0,0,.25);padding:0 .3rem;border-radiu
 <p>A trained nose working a line of plain cases one by one, and sitting down at the one that smells wrong.</p>
 <nav><a class="btn" href="#usage">Scan one file</a><a class="btn" href="#usage">Scan a directory</a><a class="btn" href="#params">Parameters</a><a class="btn" href="#exits">Exit codes</a></nav></div></header>
 <main>
+<img class="rule" src="banner.png" alt="A springer spaniel sitting alert beside one plain grey suitcase at the end of a baggage belt, its handler standing by with the lead, plain cases receding along the belt behind">
 <section class="panel"><h2>What the detector does</h2>
 <p>The tool reads files line by line as plain text and flags lines two ways, run as <code>python3 main.py (-f FILE | -d DIRECTORY) [-e ENTROPY_THRESHOLD] [-l LOG_FILE]</code>, with exactly one of the file and directory options required. The first way is a fixed list of eight regular expressions. The second way measures the Shannon entropy of the whole stripped line. A directory scan walks recursively and reads every file whatever its ending.</p></section><section class="panel"><h2>Eight patterns on the line</h2>
 <p>In the order the code holds them: a semicolon before an rm or del command with -rf; eval(; exec(; subprocess.call(; os.system(; ../; /etc/passwd; and UNION SELECT.</p></section><section class="panel"><h2>Entropy is measured on the whole line</h2>
