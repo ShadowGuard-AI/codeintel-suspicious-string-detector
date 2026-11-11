@@ -1,12 +1,10 @@
-![Sand, shell spirals and fixed glass sponges in front, a fish trail bending once and going out, the boat crossing with its widening oar trail, far shore and low moon behind, the mooring post with pearl strands and gauges at the right rim, no lettering anywhere](intro-banner.png)
+![Spaniel with its nose close to the seam of a plain suitcase on a conveyor belt, one paw raised on the belt edge, the handler hand and lead soft behind](intro-banner.png)
 
 # codeintel-Suspicious-String-Detector
 
 Title block: the name above is set in Betania Patmos In in ash white on a vent black plate ruled as a depth marker on a sounding line, with a ruled line beneath, a small shell at the left, and the single wake mark beside this first heading only. Headings after this stay typographic.
 
-![One widening oar trail on vent black water, ash white at the core, sulfur yellow at the widening edges, one tube worm red fleck at the origin, the name lettered below as depth markers on a sounding line](logo.png)
-
-![The lagoon wide at night: the boat crossing in the middle distance with its lit oar trail astern, glass sponges, shell spirals, pearl strands and gauges in the shallows, and the name painted only on the stern board of the boat](banner.png)
+![A springer spaniel sitting alert beside a single plain navy suitcase, other plain cases soft behind](logo.png)
 
 ![The bay in three depths: far shore and moon road still, the boat crossing with its trail widening, holding, and thinning fleck by fleck, a fish trail striking, bending once, and fading swiftly, bubbles rising in a slow column at the lower rim](scene.svg)
 
